@@ -7,7 +7,10 @@ export class VpcStack extends cdk.Stack {
     constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
-        this.vpc = new ec2.Vpc(this, 'eks-vpc');
+        this.vpc = new ec2.Vpc(this, 'eks-vpc', {
+          maxAzs: 2,
+          natGateways: 1
+        });
         
   }
 }
