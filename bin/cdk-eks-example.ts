@@ -4,8 +4,9 @@ import * as cdk from "@aws-cdk/core";
 import { VpcStack } from "../lib/vpc-stack";
 import { EksClusterStack } from "../lib/eks-cluster-stack";
 import { LoadBalancerControllerStack } from "../lib/lb-controller";
-import { ExternalDnsStack } from "../lib/external-dns"
-
+import { ExternalDnsStack } from "../lib/external-dns";
+import { FluentbitStack } from "../lib/fluentbit";
+import { MyChartStack } from "../lib/mychart";
 const app = new cdk.App();
 const account = process.env.CDK_DEFAULT_ACCOUNT;
 const region = process.env.CDK_DEFAULT_REGION;
@@ -29,6 +30,15 @@ new LoadBalancerControllerStack(app, "LoadBalancerControllerStack", {
 new ExternalDnsStack(app, "ExternalDnsStack", {
   env: deployEnv,
   cluster: clusterStack.cluster,
-  domainName: domainName
-})
+  domainName: domainName,
+});
 
+new FluentbitStack(app, "FluentbitStack", {
+  env: deployEnv,
+  cluster: clusterStack.cluster,
+});
+
+new MyChartStack(app, "MuChartStack", {
+  env: deployEnv,
+  cluster: clusterStack.cluster,
+});
