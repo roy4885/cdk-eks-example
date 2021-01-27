@@ -13,6 +13,7 @@
   "devDependencies": {
     "@aws-cdk/assert": "1.86.0",
     "@types/jest": "^26.0.20",
+    "@types/js-yaml": "^4.0.0",
     "@types/node": "14.14.22",
     "aws-cdk": "1.86.0",
     "jest": "^26.6.3",
@@ -24,6 +25,7 @@
     "@aws-cdk/aws-ec2": "^1.86.0",
     "@aws-cdk/aws-eks": "^1.86.0",
     "@aws-cdk/core": "1.86.0",
+    "js-yaml": "^3.14.1",
     "source-map-support": "^0.5.19"
   }
 }
