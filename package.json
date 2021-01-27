@@ -25,6 +25,7 @@
     "@aws-cdk/aws-ec2": "^1.86.0",
     "@aws-cdk/aws-eks": "^1.86.0",
     "@aws-cdk/core": "1.86.0",
+    "cdk8s": "^1.0.0-beta.6",
     "js-yaml": "^3.14.1",
     "source-map-support": "^0.5.19"
   }
